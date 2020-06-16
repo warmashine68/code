@@ -9,7 +9,14 @@ def isPal(A): #ababa
         return True
     else:
         return False
-s = input()
-s = list(s)
-print(isPal(s))
-# Доделать в рекурсивном варианте, 11 урок Ханойскии башни 35,01!!!!!!
+l = input()
+l = list(l)
+#print(isPal(l))
+# Терминальное условие - сравниваем часть строки с срезом в рекурсивом варианте
+def isPal_rec(s):
+    if len(s) <= 1:
+        return True
+    else:
+        return s[0] == s[-1] and isPal_rec(s[1:-1])
+
+print(isPal_rec(l))
